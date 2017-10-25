@@ -12,13 +12,13 @@ function ball(sx, sy, vx, width, height, color) {
   this.vy = 0
   this.g = 0.99
   this.radius = 25
-  this.back = Math.random()
+  this.back = Math.random()*1.5
   this.color = color
   this.width = width
   this.height = height
   this.raiseVy = function () {
     this.vy *= this.g 
-    this.vy += 0.25
+    this.vy += 0.50
   }
   this.draw = function() {
     ctx.beginPath()
@@ -45,14 +45,14 @@ function ball(sx, sy, vx, width, height, color) {
 
 function draw() {
   ctx.clearRect(0, 0, width, height)
-  var newball = new ball(width/2, 50, Math.random()*10-5, width, height, 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')')
+  var newball = new ball(width/2, 50, Math.random()*20-10, width, height, 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')')
   newball.draw()
   ballList.push(newball)
   for(let item of ballList) {
     item.move()
     item.draw()
   }
-  if (ballList.length > 200) {
+  if (ballList.length > 400) {
     ballList.shift()
   }
   raf = window.requestAnimationFrame(draw);

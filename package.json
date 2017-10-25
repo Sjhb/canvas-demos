@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sjhb/canvas-demos.git"
+  },
+  "author": "wanghuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sjhb/canvas-demos/issues"
+  },
+  "homepage": "https://github.com/Sjhb/canvas-demos#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
