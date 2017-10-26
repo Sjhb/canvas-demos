@@ -12,7 +12,7 @@ function ball(sx, sy, vx, width, height, color) {
   this.vy = 0
   this.g = 0.99
   this.radius = 25
-  this.back = Math.random()*1.5
+  this.back = Math.random()*1.2
   this.color = color
   this.width = width
   this.height = height
