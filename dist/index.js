@@ -1,9 +1,11 @@
+var height = document.body.clientHeight
+var width = document.body.clientWidth
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d')
 var raf
-var height = canvas.height
-var width = canvas.width
 var ballList=[]
+canvas.setAttribute('height', height+'px')
+canvas.setAttribute('width', width+'px')
 
 function ball(sx, sy, vx, width, height, color) {
   this.x = sx
@@ -18,7 +20,7 @@ function ball(sx, sy, vx, width, height, color) {
   this.height = height
   this.raiseVy = function () {
     this.vy *= this.g 
-    this.vy += 0.50
+    this.vy += 0.25
   }
   this.draw = function() {
     ctx.beginPath()
@@ -45,7 +47,7 @@ function ball(sx, sy, vx, width, height, color) {
 
 function draw() {
   ctx.clearRect(0, 0, width, height)
-  var newball = new ball(width/2, 50, Math.random()*20-10, width, height, 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')')
+  var newball = new ball(width/2, 50, Math.random()*10-5, width, height, 'rgb('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+')')
   newball.draw()
   ballList.push(newball)
   for(let item of ballList) {
